@@ -40,4 +40,13 @@ export const editarNotas = async (id: number, title: string, content: string) =>
     }
 };
 
+export const getNota = async (id: number) => {
+    try{
+        const response = await api.get(`/notes/${id}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 
