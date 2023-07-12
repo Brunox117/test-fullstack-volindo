@@ -1,5 +1,6 @@
 import './nota.css'
 import { borrarNotas } from '@/app/api/api';
+
 import Link from 'next/link';
 type NotaProps = {
     id: number;
@@ -7,7 +8,10 @@ type NotaProps = {
     content: string;
 };
 const Nota = ({ id, title, content }: NotaProps) => {
+    
     const handleBorrarNota = async () => {
+        const confirmacion = confirm('¿Estás seguro que quieres eliminar la nota?');
+        if (!confirmacion) return;
         try {
             await borrarNotas(id);
         } catch (error) {
@@ -16,13 +20,13 @@ const Nota = ({ id, title, content }: NotaProps) => {
         alert('Nota eliminada');
         window.location.reload();
     };
-    return(
+    return (
         <div className="note">
             <h3 className='title'>{title}</h3>
             <p className='content'>{content}</p>
             <div>
                 <Link href={`/editarNota/${id}`}>
-                <button className='button button-editar'>Editar</button>
+                    <button className='button button-editar'>Editar</button>
                 </Link>
                 <button className='button button-eliminar' onClick={() => handleBorrarNota()}>Eliminar</button>
             </div>

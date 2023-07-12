@@ -1,11 +1,30 @@
 "use client"
 import '../../crearNota/crearNota.css'
-import { getNota, editarNotas } from "@/app/api/api";
+import { getNota, editarNotas, getNotas } from "@/app/api/api";
 import { get } from "http";
 import { useState, useEffect } from "react";
 import { set } from "react-hook-form";
 import { useRouter } from "next/navigation";
+type NotaProps = {
+  id: number;
+  title: string;
+  content: string;
+};
 const EditarNota = ({ params }) => {
+  const [titleOriginal, setTitleOriginal] = useState('');
+  const miArray: Array<string> = ["string1", "string2", "string3"];
+  const titulos: Array<string> = [];
+  const [notas, setNotas] = useState<NotaProps[]>([]);
+  useEffect(() => {
+    const getNotasData = async () => {
+      const notas = await getNotas();
+      setNotas(notas as NotaProps[]);
+    };
+    getNotasData();
+  }, []);
+  for (let i = 0; i < notas.length; i++) {
+    titulos.push(notas[i].title);
+  }
     const id = params.id;
     const [title, setTitle] = useState('');
     const [content, setContent] = useState('');
@@ -23,6 +42,7 @@ const EditarNota = ({ params }) => {
             const nota = await getNota(id);
             setNota(nota);
             setTitle(nota.title);
+            setTitleOriginal(nota.title);
             setContent(nota.content);
         };
 
@@ -33,6 +53,10 @@ const EditarNota = ({ params }) => {
         event.preventDefault();
         if (title.length < 1 || title.length > 100) {
           alert('El título debe tener entre 1 y 100 palabras');
+          return;
+        }
+        if(titulos.includes(title) && title != titleOriginal){
+          alert('Los títulos de las notas deben ser únicos');
           return;
         }
         if (content.length < 1 || content.length > 1000) {
