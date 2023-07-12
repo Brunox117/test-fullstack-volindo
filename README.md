@@ -4,6 +4,8 @@
 - Git: https://git-scm.com/downloads para clonar el proyecto
 - NodeJS: https://nodejs.org/en/download
 - Y npm, que puede ser instalado desde una línea de comandos ```npm install -g npm``` una vez que Node haya sido instalado
+- Además ejecutar ```npm install next react react-dom```
+- Dentro de la carpeta /notesapp ejecutar ```npm install```
 - Una vez instaladas estas dependencias, dentro de la carpeta /notesapp ejecutar el siguiente comando ```npm run dev```
 ## Base de datos
 - Para correr la base de datos es necesario tener python 3 instalado, https://www.python.org/downloads/.
