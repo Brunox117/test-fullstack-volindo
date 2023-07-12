@@ -35,6 +35,7 @@ const CrearNota = () => {
     <div>
       <h1>Crear nota</h1>
       <p>Ingrese el título y contenido de la nota</p>
+      <div className='card'>
       <form onSubmit={handleSubmit} className='formulario'>
         <div>
           <label htmlFor="titulo" className='formulario label'>Título:</label>
@@ -57,6 +58,7 @@ const CrearNota = () => {
         </div>
         <button type="submit" className='formulario button'>Crear</button>
       </form>
+      </div>
     </div>
   );
 };
