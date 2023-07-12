@@ -22,7 +22,7 @@ const ListaNotas = () => {
     <>
       <div>
         {notas.map((nota) => (
-          <Nota title={nota.title} content={nota.content} />
+          <Nota id={nota.id} title={nota.title} content={nota.content} />
         ))}
       </div>
     </>

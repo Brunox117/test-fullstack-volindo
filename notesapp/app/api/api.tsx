@@ -15,7 +15,7 @@ export const getNotas = async () => {
 
 export const crearNotas = async (title: string, content: string) => {
     try{
-        const response = await api.post('/notes', {title, content});
+        const response = await api.post('/notes?title=' + title + '&content=' + content);
         return response.data;
     } catch (error) {
         console.log(error);

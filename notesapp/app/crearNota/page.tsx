@@ -1,6 +1,7 @@
 "use client"
 import './crearNota.css'
 import React, { useState } from 'react';
+import { crearNotas } from '../api/api';
 
 const CrearNota = () => {
   const [title, setTitle] = useState('');
@@ -14,7 +15,7 @@ const CrearNota = () => {
     setContent(event.target.value);
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     if (title.length < 1 || title.length > 100) {
       alert('El título debe tener entre 1 y 100 palabras');
@@ -24,8 +25,14 @@ const CrearNota = () => {
       alert('El contenido debe tener entre 1 y 1000 palabras');
       return;
     }
-    // Lógica para crear la nota con el título y contenido ingresados
-    // ...
+    try {
+      title.toString();
+      content.toString();
+      crearNotas(title, content);
+    }
+    catch (error) {
+      console.log(error);
+    }
     alert('Nota creada');
     setTitle('');
     setContent('');
