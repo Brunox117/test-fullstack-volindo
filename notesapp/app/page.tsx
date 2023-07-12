@@ -1,11 +1,10 @@
 import Nota from "./components/notaComponent/nota"
-
+import ListaNotas from "./components/listaNotas/listaNotas"
 export default async function Home() {
   return (
     <>
     <div>
-      <Nota title="Nota 1" content="Contenido de la nota 1" />
-      <Nota title="Nota 2" content="Contenido de la nota 2" />
+      <ListaNotas/>
     </div>
     </>
   )
