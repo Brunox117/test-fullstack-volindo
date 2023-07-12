@@ -1,7 +1,7 @@
 # Aplicación de notas
 ## Página Web
 - Para ejecutar el proyecto se necesita:
-- Git: https://git-scm.com/downloads para clonar el proyecto
+- Git: https://git-scm.com/downloads para clonar el proyecto usando ```git clone ```
 - NodeJS: https://nodejs.org/en/download
 - Y npm, que puede ser instalado desde una línea de comandos ```npm install -g npm``` una vez que Node haya sido instalado
 - Además ejecutar ```npm install next react react-dom```
