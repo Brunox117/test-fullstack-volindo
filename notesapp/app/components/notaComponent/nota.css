@@ -1,5 +1,5 @@
 .note {
-    background-color: yellow;
+    background-color: #f5f3f7;
     padding: 10px;
     display: inline-block;
     margin-right: 10px;
@@ -35,12 +35,12 @@
   }
   
   .button-editar {
-    background-color: #4CAF50;
+    background-color: #7db603;
     color: white;
   }
   
   .button-editar:hover {
-    background-color: #3b8a3f;
+    background-color: #6a9b02;
   }
   
   .button-eliminar {
