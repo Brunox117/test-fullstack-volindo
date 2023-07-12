@@ -33,7 +33,7 @@ export const borrarNotas = async (id: number) => {
 
 export const editarNotas = async (id: number, title: string, content: string) => {
     try{
-        const response = await api.put(`/notes/${id}`, {title, content});
+        const response = await api.put(`/notes/${id}?title=${title}&content=${content}`);
         return response.data;
     } catch (error) {
         console.log(error);

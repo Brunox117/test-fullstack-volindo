@@ -47,6 +47,11 @@ async def get_notes():
     query = notes.select()
     return await database.fetch_all(query)
 
+@app.get("/notes/{note_id}")
+async def get_note_by_id(note_id: int):
+    query = notes.select().where(notes.c.id == note_id)
+    return await database.fetch_one(query)
+
 @app.post("/notes")
 async def create_note(title: str, content: str):
     query = notes.insert().values(title=title, content=content)

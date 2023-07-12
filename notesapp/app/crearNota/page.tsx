@@ -40,8 +40,8 @@ const CrearNota = () => {
 
   return (
     <div>
-      <h1>Crear nota</h1>
-      <p>Ingrese el título y contenido de la nota</p>
+      <h1 className='h1'>Crear nota</h1>
+      <p className='instrucciones'>Ingrese el título y contenido de la nota</p>
       <div className='card'>
       <form onSubmit={handleSubmit} className='formulario'>
         <div>
