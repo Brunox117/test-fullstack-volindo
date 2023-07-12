@@ -1,4 +1,4 @@
-# test-fullstack-volindo
+# Aplicación de notas
 ## Página Web
 - Para ejecutar el proyecto se necesita:
 - Git: https://git-scm.com/downloads para clonar el proyecto
